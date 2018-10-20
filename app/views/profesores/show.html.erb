@@ -1,0 +1,40 @@
+<h1>Profesores#show</h1>
+<p>Find me in app/views/profesores/show.html.erb</p>
+
+<table border=1>
+  <tr>
+    <td colspan="2"> <font color="red"> <center> Profesor <%= @prof.id %></center> </font> </td>
+  </tr>
+  <tr>
+    <td><b>Nombre:</b></td>
+    <td> <%= @prof.nombre %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Apellido:</b></td>
+    <td> <%= @prof.apellido %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Documento:</b></td>
+    <td> <%= @prof.documento %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Edad:</b></td>
+    <td> <%= @prof.edad %> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <%= link_to "Editar", edit_profesor_path(@prof)%> </td>
+  </tr>
+</table>
+
+<br>
+ <%= link_to "crear nuevo", new_profesor_path %>
+<br>
+<%= link_to "ver todos", profesores_path %>
+<p>
+  <%= link_to 'regresar',  profesores_path %>
+  <%= link_to 'Destroy',  profesor_path(@prof), method: :delete, data: { confirm: 'Desea eliminar ?' } %>
+</p>

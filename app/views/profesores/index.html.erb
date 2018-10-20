@@ -1,0 +1,24 @@
+<h1>Profesores#index</h1>
+<p>Find me in app/views/profesores/index.html.erb</p>
+
+<table border=1 bordercolor="red">
+  <tr><td><b>ID</b></td> <td><b>Nombre</b></td> <td><b>Apellido</b></td> <td><b>Documento</b></td> <td><b>Edad</b></td> </tr>
+
+  <% @profs.each do |prof| %>
+  <tr>
+    <td> <%= prof.id %> </td>
+    <td> <%= prof.nombre %></td>
+    <td> <%= prof.apellido %></td>
+    <td> <%= link_to prof.documento, profesor_path(prof) %> </td>
+    <td> <%= prof.edad %></td>
+  </tr>
+
+<% end %>
+</table>
+
+<br>
+<%= link_to "nuevo Profe", new_profesor_path %> <br>
+
+<br> <%= link_to "index estudiantes", estudiantes_path %> <br>
+
+<br> <%= link_to "index cursos", cursos_path %>

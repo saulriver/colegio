@@ -1,0 +1,36 @@
+<h1>Cursos#show</h1>
+<p>Find me in app/views/cursos/show.html.erb</p>
+
+<table border=1>
+  <tr>
+     <td colspan="2"> <font color="red"> <center> Curso <%= @cur.id %></center> </font> </td>
+  </tr>
+
+  <tr>
+    <td><b>Grado:</b></td>
+    <td> <%= @cur.grado %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Materia:</b></td>
+    <td> <%= @cur.materia %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Profesor:</b></td>
+    <td> <%= @cur.profesor.nombre %> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <%= link_to "Editar", edit_curso_path(@cur)%> </td>
+  </tr>
+</table>
+
+<br>
+ <%= link_to "crear nuevo", new_curso_path %>
+<br>
+<%= link_to "ver todos", cursos_path %>
+<p>
+  <%= link_to 'regresar',  cursos_path %>
+  <%= link_to 'Destroy',  curso_path(@cur), method: :delete, data: { confirm: 'Desea eliminar ?' } %>
+</p>

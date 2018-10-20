@@ -1,0 +1,11 @@
+<h1>Cursos#edit</h1>
+<p>Find me in app/views/cursos/edit.html.erb</p>
+
+<%= simple_form_for @cur do |f| %>
+  <%= f.input :grado %>
+  <%= f.input :materia %>
+  <%= f.association :profesor, label_method: :nombre %>
+  <%= f.submit "Actualizar" %>
+<% end %>
+
+<%= link_to "ver todos", cursos_path %>

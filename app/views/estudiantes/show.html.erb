@@ -1,0 +1,50 @@
+<h1>Estudiantes#show</h1>
+<p>Find me in app/views/estudiantes/show.html.erb</p>
+
+<table border=1>
+  <tr>
+    <td colspan="2"> <font color="red"> <center> Estudiante <%= @est.id %></center> </font> </td>
+  </tr>
+  <tr>
+    <td><b>Nombre:</b></td>
+    <td> <%= @est.nombre %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Apellido:</b></td>
+    <td> <%= @est.apellido %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Documento:</b></td>
+    <td> <%= @est.documento %> </td>
+  </tr>
+
+  <tr>
+    <td><b>fecha nac:</b></td>
+    <td> <%= @est.fecha_nac %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Curso:</b></td>
+    <td> <%= @est.curso.grado %> </td>
+  </tr>
+
+  <tr>
+    <td><b>Materia:</b></td>
+    <td> <%= @est.curso.materia %> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> <%= link_to "Editar", edit_estudiante_path(@est)%> </td>
+  </tr>
+</table>
+
+<br>
+ <%= link_to "crear nuevo", new_estudiante_path %>
+<br>
+<%= link_to "ver todos", estudiantes_path %>
+<p>
+  <%= link_to 'regresar', estudiantes_path %>
+  <%= link_to 'Destroy', estudiante_path(@est), method: :delete, data: { confirm: 'Desea eliminar ?' } %>
+</p>
